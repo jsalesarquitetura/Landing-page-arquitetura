@@ -103,6 +103,8 @@ main { overflow-x: clip; }
 .nav__menu { display: none; margin-left: auto; }
 .menu { position: fixed; inset: 0; z-index: 60; display: grid; grid-template-rows: auto 1fr auto; padding: calc(14px + env(safe-area-inset-top, 0px)) var(--gut-r) calc(32px + env(safe-area-inset-bottom, 0px)) var(--gut-l); background: var(--color-1); color: var(--color-2); overflow-y: auto; }
 [hidden] { display: none !important; }
+/* telas baixas (ex.: dentro de um bloco do Wix com pouca altura): a abertura ganha altura mínima para nada se sobrepor */
+@media (min-width: 900px) and (max-height: 760px) { html #hero { min-height: 760px; } }
 /* títulos grandes: vídeo dentro das letras ao passar o mouse */
 @media (hover: hover) and (pointer: fine) {
   .vt, .vt :is(.hero__glyphs, .statement__line, .footer__word, .contact__voice) { padding-top: .3em; margin-top: -.3em; background-image: var(--vt-img, none); background-size: cover; background-position: center; -webkit-background-clip: text; background-clip: text; transition: color .5s ease; }
