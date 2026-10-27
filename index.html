@@ -7,7 +7,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="google" content="notranslate">
 <meta http-equiv="content-language" content="pt-BR">
-<script>document.documentElement.lang="pt-BR";document.documentElement.setAttribute("translate","no");</script>
+<script>document.documentElement.lang="pt-BR";document.documentElement.setAttribute("translate","no");if(/[?&]wix\b/.test(location.search))document.documentElement.classList.add("embutido");</script>
 <!--
   Estrutura, efeitos e animações baseados no template "Onda" da 8B (https://8b.com/templates/onda/),
   código sob licença MIT. Adaptado para Jéssica Sales Arquitetura e Interiores.
@@ -103,6 +103,11 @@ main { overflow-x: clip; }
 .nav__menu { display: none; margin-left: auto; }
 .menu { position: fixed; inset: 0; z-index: 60; display: grid; grid-template-rows: auto 1fr auto; padding: calc(14px + env(safe-area-inset-top, 0px)) var(--gut-r) calc(32px + env(safe-area-inset-bottom, 0px)) var(--gut-l); background: var(--color-1); color: var(--color-2); overflow-y: auto; }
 [hidden] { display: none !important; }
+/* dentro do Wix (link com ?wix): sem o menu próprio e sem barra de rolagem, para parecer parte do site */
+html.embutido #navigation { display: none !important; }
+html.embutido { scrollbar-width: none; }
+html.embutido::-webkit-scrollbar, html.embutido body::-webkit-scrollbar { display: none; }
+html.embutido .hero__intro { padding-top: clamp(40px, 7svh, 72px); }
 /* telas baixas (ex.: dentro de um bloco do Wix com pouca altura): a abertura ganha altura mínima para nada se sobrepor */
 @media (min-width: 900px) and (max-height: 760px) { html #hero { min-height: 760px; } }
 /* títulos grandes: vídeo dentro das letras ao passar o mouse */
